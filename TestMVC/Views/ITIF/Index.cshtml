@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "ITIF";
+    Layout = null;
+}
+<label>@ViewBag.author</label>
+<img src="@ViewBag.image">
+<video  width="100%" height="1080" autoplay id="vid" muted playsinline loop>
+  <source src="@ViewBag.vid" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<script>
+    document.getElementById('vid').play();
+</script>

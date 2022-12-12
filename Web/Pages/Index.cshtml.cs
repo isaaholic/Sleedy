@@ -1,5 +1,6 @@
 ﻿using Firebase.Auth;
 using Firebase.Storage;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
@@ -8,15 +9,16 @@ using WebAPI.Models;
 
 namespace Web.Pages
 {
+    [Authorize]
     [BindProperties(SupportsGet =true)]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private readonly Microsoft.AspNetCore.Hosting.IWebHostEnvironment _env;
+        private readonly IWebHostEnvironment _env;
         public FacultiesResponse facResp { get; set; }
         public string url { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, Microsoft.AspNetCore.Hosting.IWebHostEnvironment env)
+        public IndexModel(ILogger<IndexModel> logger, IWebHostEnvironment env)
         {
             _logger = logger;
             _env = env;

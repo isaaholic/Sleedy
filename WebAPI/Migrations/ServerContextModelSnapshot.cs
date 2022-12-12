@@ -50,6 +50,10 @@ namespace WebAPI.Migrations
                     b.Property<string>("FacultyName")
                         .HasColumnType("text");
 
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("text");

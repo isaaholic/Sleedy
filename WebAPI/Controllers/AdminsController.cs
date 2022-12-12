@@ -186,6 +186,7 @@ namespace WebAPI.Controllers
             {
                 var upResponse = await _context.Responses.FindAsync(response.FacultyName);
                 upResponse.ImageUrl = response.ImageUrl;
+                upResponse.Author = response.Author;
 
                 _context.Responses.Update(upResponse);
                 await _context.SaveChangesAsync();
